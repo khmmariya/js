@@ -185,70 +185,238 @@
 
 
 
- let month = "";
-let dayWeek = "";
+// //  let month = "";
+// // let dayWeek = "";
 
-let date = new Date();
+// // let date = new Date();
 
-let arrayDays = {
-    0: "воскресенье",
-    1: "понедельник",
-    2: "вторник",
-    3: "среда",
-    4: "четверг",
-    5: "пятница",
-    6: "суббота"
-let a, b, c; //коэф. кв. уравнения
-let D; //дискриминант
-let x1, x2; //корни кв. уравнения
-let cancel;
+// // let arrayDays = {
+// //     0: "воскресенье",
+// //     1: "понедельник",
+// //     2: "вторник",
+// //     3: "среда",
+// //     4: "четверг",
+// //     5: "пятница",
+// //     6: "суббота"
+// // let a, b, c; //коэф. кв. уравнения
+// // let D; //дискриминант
+// // let x1, x2; //корни кв. уравнения
+// // let cancel;
 
-function setParametrs () {
-    a = setParam("a");
-    b = setParam("b");
-    c = setParam("c");
-}
+// // function setParametrs () {
+// //     a = setParam("a");
 
-let arrayMonth = {
-    0: "январь",
-    1: "февраль",
-    2: "март",
-    3: "апрель",
-    4: "май",
-    5: "июнь",
-    6: "июль",
-    7: "август",
-    8: "сентябрь",
-    9: "октябрь",
-    10: "ноябрь",
-    11: "декабрь"
-}
-function setParam(nameParam) {
-    let param;
-    do {
-        param = prompt(`Коэф. ${nameParam}:`);
-        cancel = checkParametr(param);
-    } while (cancel);
 
-for (let index in arrayDays) {
-    if(date.getDay() == index) {
-        dayWeek = arrayDays[index];
+
+// let cancel; //флаг для проверки ввода параметра
+
+// function setParametrs() {
+//     let a, b, c; //коэф. кв. уравнения
+
+//     if(a = setParam("a")) {
+//         if(b = setParam("b")) {
+//             if(c = setParam("c"))
+//             {
+//                 return [a, b, c];
+//             }
+//         }
+//     };
+// }
+
+
+
+
+
+
+// function calcSolution(a, b, c) {
+//     let x1, x2; //корни уравнения
+//     let D; //дискриминант
+//     let result; //строка с итогом
+
+//     if ((a == 0 && c == 0) || (b == 0 && c == 0) ) {
+//         result = 0;
+//     }
+//     // else if ((a == 0 && b == 0) || (a == 0 && b == 0 && c == 0)) {
+//     //     result = "Корней нет!";
+//     // }
+//     else if(a == 0) {
+//         result = -c/b;
+//     }
+//     else if(b == 0) {
+//         (-c / a >= 0) ? result = Math.sqrt(-c / a) : result = "Корней нет!";
+//     }
+//     else if (c == 0) {
+//         x1 = 0;
+//         x2 = -b/a;
+
+//         result = [x1, x2];
+//     }
+//     else if(a != 0 && b != 0 && c != 0) {
+//          D = calcD(a, b, c);
+//          result = calcRoots(D, a, b, c);
+//     }
+//     else {
+//         result = "Корней нет!";
+//     }
+
+//     return result;
+// }
+
+// function calcD(a, b, c) {
+//     return b ** 2 - 4 * a * c;
+// }
+
+// function calcRoots(D, a, b, c) {
+//     if(D > 0) {
+//         x1 = (-b + Math.sqrt(D)) / (2 * a);
+//         x2 = (-b - Math.sqrt(D)) / (2 * a);
+
+//         return [x1, x2];
+//     }
+//     else if (D == 0) {
+//         return -b / (2 * a);
+//     }
+//     else {
+//         return "Корней нет!";
+//     }
+// }
+
+// function getSolution(solution) {
+//     if(typeof solution == "string") {
+//         alert(solution);
+//     }
+//     else if(typeof solution == "number") {
+//         alert(`Уравнение имеет один корень: x = ${solution}`);
+//     }
+//     else {
+//         alert(`Уравнение квадратное. Имеет два корня: \nx1 = ${solution[0]}\nx2 = ${solution[1]}`);
+//     }
+// }
+
+// let params = setParametrs();
+// let solution = calcSolution(params[0], params[1], params[2]);
+
+// getSolution(solution); 
+
+
+
+
+
+
+
+// let params = setParametrs();
+// let solution
+
+// let x1, x2; //корни кв. уравнения
+// let cancel; //флаг для проверки ввода параметра
+// if (typeof params != "undefined") {
+//     solution = calcSolution(params[0], params[1], params[2]);
+//     getSolution(solution);
+// }
+// else {
+//     alert("Вы отменили ввод!");
+// }
+
+// function setParametrs() {
+//     let a, b, c; //коэф. кв. уравнения
+
+// }
+
+
+
+// let params = setParametrs();
+// let solution;
+// let inputParamA = document.getElementById("param_a");
+// let inputParamB = document.getElementById("param_b");
+// let inputParamC = document.getElementById("param_c");
+
+// if (typeof params != "undefined") {
+//     solution = calcSolution(params[0], params[1], params[2]);
+//     getSolution(solution);
+// }
+// else {
+//     alert("Вы отменили ввод!");
+// }
+// let divButtons = document.querySelector(".buttons");
+
+// let paramA;
+// let paramB;
+// let paramC;
+// let result;
+
+// let btnCalc = document.getElementById("btn_calc");
+
+// inputParamA.addEventListener("input", () => {
+//     inputParamB.removeAttribute("disabled");
+//     paramA = +inputParamA.value;
+// })
+
+// inputParamB.addEventListener("input", () => {
+//     inputParamC.removeAttribute("disabled");
+//     paramB = +inputParamB.value;
+// })
+// inputParamC.addEventListener("input", () => {
+//     btnCalc.removeAttribute("disabled");
+//     paramC = +inputParamC.value;
+// })
+
+// btnCalc.addEventListener("click", () => {
+//     result = calcSolution(paramA, paramB, paramC);
+
+//     let solution = document.createElement("p");
+//     solution.innerHTML = result;
+//     divButtons.append(solution);
+// })
+
+
+
+
+
+// let params = setParametrs();
+// let solution;
+
+// if (typeof params != "string") {
+//     solution = calcSolution(params[0], params[1], params[2]);
+//     getSolution(solution);
+// }
+// else {
+//     alert(params);
+// }
+
+
+
+
+
+
+
+
+//         let customers = [7, 4, 3, 4]; //время на обслуживание каждого покупателя
+// let n = 2; //кол-во касс
+
+// let time1 = customers[0]; //время обслуживания на 1-й кассе (стартовое = времени 1-го покупателя)
+// let time2 = customers[1]; //время обслуживания на 2-й кассе (стартовое = времени 1-го покупателя)
+
+// for(let i = 2; i < customers.length; i++) {
+//     if (time1 > time2) {
+//         time2 += customers[i];
+//     }
+//     else {
+//         time1 += customers[i];
+//     }
+// }
+
+// time1 > time2 ? alert(time1) : alert(time2);
+
+
+
+
+
+// Дана строка. Сделайте заглавным первый символ этой строки не используя цикл. Найдите два решения.
+        
+    ucFirst("Привет!") == "Привет!"
+    function ucFirst(str) {
+      if (!str) return str;
+    return str [0]. toUpperCase() + str.slice(1); 
     }
-    return param;
-}
 
-for (let index in arrayMonth) {
-    if (date.getMonth() == index) {
-        month = arrayMonth[index];
-function checkParametr(param) {
-    if (typeof param == "object") {
-        return false;
-    }
-    else if (isNaN(param) || param == "") {
-        alert("Ошибка! Введена пустая строка или не число!");
-        return true;
-    }
-}
-
-console.log(`Сегодня - ${date.getFullYear()}, ${month}, ${date.getDate()}(${dayWeek}). Время ${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`); 
-setParametrs(); 
+    alert( ucFirst("Привет!") );//Привет!
